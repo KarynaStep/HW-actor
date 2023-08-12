@@ -36,13 +36,15 @@ function createActorCard(actor) {
       classNames: ["actor-initials"],
       styles: { backgroundColor: stringToColour(actor.name) },
     },
-    document.createTextNode(
-      actor.name
-        .split(" ")
-        .map((elem) => elem[0])
-        .join("")
-    )
+    document.createTextNode(getInitials(actor.name))
   ); // написати функцію, яка приймає ім'я актора і повертає ініціали
+
+  function getInitials(name) {
+    return name
+      .split(" ")
+      .map((elem) => elem[0])
+      .join("");
+  }
 
   const divPhotoWrapper = createElement(
     "div",
