@@ -52,3 +52,22 @@ function createElement(
   } 
   return elem;
 }
+
+/**
+ * 
+ * @param {symbol} name 
+ * @returns {symbol}
+ */
+function getInitials(name) {
+  if (typeof (name) === 'string') {
+    return name
+      .trim()
+      .split(" ")
+      .map((elem) => elem[0])
+      .join("")
+      .toLocaleUpperCase();
+    
+  } else {
+     throw new TypeError("must be "); 
+   }
+ }
